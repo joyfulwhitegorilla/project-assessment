@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgriLink</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header id="hero" class="hero-section">
+    <nav class="navbar">AgriLink
+      <h1 class="logo">AgriLink</h1>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+    </header>
+    <section class="hero-section">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <h1>AgriLink</h1>
+      <p>A mobile platform that delivers daily farming tips, market prices, and weather updates.</p>
+      <button class="cta">Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="images/plantation.webp">
+    </div>
+  </div>
+</section>
+    <button id="darkModeToggle">🌙</button>
+
+  <section id="about" class="about-section">
+    <img src="images/ChatGPT Image Jun 6, 2025, 12_37_26 PM.png" alt="AgriLink Logo" />
+    <div>
+      <h2>About Us</h2>
+      <p>AgriLink was co-founded by Lilian Kamau, a data scientist from a farming background, and Peter Onyango, a seasoned soil agronomist. Motivated by the struggles they witnessed among smallholder farmers — from unpredictable weather to market exploitation — they set out to build a mobile platform that delivers farming advice, weather forecasts, and fair price updates. Their mission is to empower rural farmers with practical, accessible technology that boosts yields and income.</p>
+    </div>
+  </section>
+
+  <section id="products" class="product-carousel">
+    <h2>Our Features</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn left">&#10094;</button>
+      <div class="carousel-track">
+        <div class="card">
+          <img src="images/1soil.jpeg">
+          <h3>CropSense</h3>
+          <p>Suggests crops based on soil type, market trends, and season.</p>
+        </div>
+        <div class="card">
+          <img src="images/chatbot.jpg">
+          <h3>Agrichat</h3>
+          <p>A multilingual chatbot for answering farmer questions (offline-ready).</p>
+        </div>
+        <div class="card">
+          <img src="images/graph.png">
+          <h3>MarketPulse</h3>
+          <p>Real-time prices and alerts for local markets.</p>
+        </div>
+      </div>
+      <button class="carousel-btn right">&#10095;</button>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“Before AgriLink, I had to guess which crops to plant. Now I use CropSense, and my yields have doubled in one season.”</p>
+        <h4>— Mary Wanjiku, Smallholder Farmer, Kirinyaga</h4>
+      </div>
+      <div class="testimonial">
+        <p>“The AgriChat bot helped me treat a maize disease quickly — in Kiswahili! It's like having an agronomist in my pocket.”</p>
+        <h4>— John Otieno, Youth Farmer, Kisumu County</h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="tag-line">
+    <p>Grounded, nature-connected, growth-oriented</p>
+  </section>
+
+  <section class="audience-toggle">
+    <h2>Who Are You?</h2>
+    <div class="toggle-buttons">
+      <button id="farmerBtn">For Farmers</button>
+      <button id="partnerBtn">For AgriTech Partners</button>
+    </div>
+    <div id="audienceContent"></div>
+  </section>
+
+  <section class="faq-section">
+    <h2>FAQs</h2>
+    <div class="faq">
+      <div class="question">How do I join AgriLink?</div>
+      <div class="answer">
+        <p>Click on 'Get Started' and fill out the registration form!</p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="question">Is AgriLink free?</div>
+      <div class="answer">
+        <p>Yes, basic features are free. Premium tools are coming soon.</p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="question">How does AgriLink help farmers?</div>
+      <div class="answer">
+        <p>We provide tools to help farmers plan, connect, and grow smarter.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="team-section">
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="images/ChatGPT Image Jun 6, 2025, 05_27_23 PM.png" alt="Lynn Gathoni" />
+        <h3>Lynn Gathoni</h3>
+        <p>Community Outreach Officer</p>
+      </div>
+      <div class="team-card">
+        <img src="images/ChatGPT Image Jun 6, 2025, 05_20_39 PM.png" alt="Queen Nadia and Finlay Ndung'u" />
+        <h3>Queen Nadia and Finlay Ndung'u</h3>
+        <p>Data Science Analysts</p>
+      </div>
+      <div class="team-card">
+        <img src="images/ChatGPT Image Jun 6, 2025, 05_20_44 PM.png" alt="Lily Joy Kinga" />
+        <h3>Lily Joy Kinga</h3>
+        <p>Lead Agronomist</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="chatbot">
+    <h2>Still have questions?</h2>
+    <p>Ask our innovative and efficient chatbot below.</p>
+   <div class="chat-window">
+  <div class="chat-display">
+    <img src="images/chatbot.jpg" class="chat-avatar" />
+    <h3>Chat with AgriBot 🤖</h3>
+    <div id="chat-log" class="chat-log"></div>
+  </div>
+  <input type="text" id="user-input" placeholder="Type your question..." />
+  <button onclick="sendToBot()">Send</button>
+  <div class="sample-questions">
+  <button class="sample-q">What products do you offer?</button>
+  <button class="sample-q">How does your soil sensor work?</button>
+  <button class="sample-q">Can you explain your mission?</button>
+  <button class="sample-q">What regions do you serve?</button>
+  <button class="sample-q">How can I contact support?</button>
+</div>
+  <p id="error-message"></p>
+</div>
+
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Want us to reach out?</h2>
+    <p>Fill out the form below to receive updates directly from us.</p>
+    <form id="contactForm">
+      <input type="text" placeholder="Name"/>
+      <input type="email" placeholder="Email"/>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 AgriLink</p>
+    <a href="https://facebook.com">
+      Facebook
+    </a>
+    <a href="https://instagram.com">
+      Instagram
+    </a>
+    <a href="https://linkedin.com">
+      LinkedIn
+    </a>
+    <div id="visitorCounter"></div>
+  </footer>
+
+  <button id="backToTop">⬆️</button>
+  <script src="https://js.puter.com/v2/"></script>
+  <script src="script.js"></script>
+ 
+
+</body>
+</html>
