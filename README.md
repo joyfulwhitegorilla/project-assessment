@@ -1,1 +1,0 @@
-AgriLink is a responsive web platform designed to empower farmers and agricultural partners with smart tools, real-time weather updates, market prices, and expert chatbot assistance. The site also includes an AI-powered chatbot (AgriBot) built using Puter.js for answering farming-related queries.
