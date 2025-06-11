@@ -150,22 +150,18 @@ visits++;
 localStorage.setItem('visits', visits);
 visitorCounter.textContent = `Visits: ${visits}`;
 
-document.addEventListener('DOMContentLoaded', () => {
-
 const chatDisplay = document.querySelector('.chat-display');
 const chatInput = document.querySelector('.chat-window input');
 const chatButton = document.querySelector('.chat-window button');
 
-const startupBio = `We are Agritech Pro, empowering farmers with smart tools. Our mission is to revolutionize agriculture by providing AI-powered insights on soil, weather, and market prices. We specialize in smart soil sensors, crop management advice, and local market updates.`;
-
-chatButton.addEventListener('click', async () => {
+chatButton.addEventListener('click', () => {
   const userText = chatInput.value.trim();
   if (!userText) {
     alert("Please enter a question!");
     return;
   }
 
-  // Show user message
+  
   const userMsg = document.createElement('div');
   userMsg.textContent = `You: ${userText}`;
   userMsg.style.fontWeight = '700';
@@ -175,30 +171,48 @@ chatButton.addEventListener('click', async () => {
   chatInput.disabled = true;
   chatButton.disabled = true;
 
-  // Show waiting message
   const botMsg = document.createElement('div');
   botMsg.textContent = `AgriBot: typing...`;
   botMsg.style.fontStyle = 'italic';
   chatDisplay.appendChild(botMsg);
   chatDisplay.scrollTop = chatDisplay.scrollHeight;
 
-  try {
-    const response = await puter.ai.chat({
-      prompt: `${startupBio}\n\nUser: ${userText}\nAgriBot:`,
-      max_tokens: 150,
-    });
+  
+  setTimeout(() => {
+    const reply = generateBotResponse(userText);
+    botMsg.textContent = `AgriBot: ${reply}`;
+    finishInteraction();
+  }, 800); 
+});
 
-    botMsg.textContent = `AgriBot: ${response.text || response.answer || 'Sorry, no answer.'}`;
-  } catch (error) {
-    botMsg.textContent = "AgriBot: Sorry, something went wrong.";
-    console.error(error);
+function generateBotResponse(userText) {
+  const text = userText.toLowerCase();
+
+  if (text.includes('hello') || text.includes('hi')) {
+    return "Hello! I'm AgriBot. How can I assist your farming today?";
+  } else if (text.includes('soil')) {
+    return "Healthy soil is the foundation of good crops. Consider checking pH and nutrient levels regularly.";
+  } else if (text.includes('market')) {
+    return "Local market prices depend on your location and crop. Check your nearest mandi or ask me specifics.";
+  } else if (text.includes('weather')) {
+    return "Weather affects everything—planting, harvesting, and pest control. Please provide your region for updates.";
+  } else if (text.includes('crop')) {
+    return "Different crops need different care. What crop are you growing?";
+  } else if (text.includes('bye')) {
+    return "Goodbye! Wishing you a bountiful harvest!";
+  } else if (text.includes('help')) {
+    return "You can ask about soil, crop management, weather, or market prices.";
+  } else {
+    return "I'm not sure how to answer that. Try asking about soil, crops, weather, or market updates.";
   }
+}
 
+function finishInteraction() {
   chatInput.disabled = false;
   chatButton.disabled = false;
   chatInput.focus();
   chatDisplay.scrollTop = chatDisplay.scrollHeight;
-});
+}
 
 chatInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
@@ -206,12 +220,8 @@ chatInput.addEventListener('keypress', (e) => {
     e.preventDefault();
   }
 });
- 
-document.querySelectorAll('.sample-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    chatInput.value = btn.textContent;
-    chatButton.click();
-  });
-});
 
-});
+function sendQuickQuestion(text) {
+  chatInput.value = text;
+  chatButton.click(); 
+}
