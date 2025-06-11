@@ -149,11 +149,11 @@
   <input type="text" id="user-input" placeholder="Type your question..." />
   <button onclick="sendToBot()">Send</button>
   <div class="sample-questions">
-  <button class="sample-q">What products do you offer?</button>
-  <button class="sample-q">How does your soil sensor work?</button>
-  <button class="sample-q">Can you explain your mission?</button>
-  <button class="sample-q">What regions do you serve?</button>
-  <button class="sample-q">How can I contact support?</button>
+  <button onclick="sendQuickQuestion('How’s the weather?')">How’s the weather?</button>
+  <button onclick="sendQuickQuestion('Soil health tips')">Soil health tips</button>
+  <button onclick="sendQuickQuestion('What crop should I grow?')">Crop advice</button>
+  <button onclick="sendQuickQuestion('Show market prices')">Market prices</button>
+  <button onclick="sendQuickQuestion('Goodbye')">Goodbye</button>
 </div>
   <p id="error-message"></p>
 </div>
